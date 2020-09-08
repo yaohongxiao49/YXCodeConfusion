@@ -1,16 +1,11 @@
-# YXCodeConfusion
-代码混淆
+#!/bin/sh
 
-1、分别创建.sh，empty->.list，.h。
-2、于targets->Build Phases中添加Run Script并添加地址，如"$PROJECT_DIR/YXCodeConfusionTest/CodeObfuscation/confush.sh"。
-3、于Prefix Header中添加地址，如"$(SRCROOT)/YXCodeConfusionTest/YXCodeConfusion.pch"。
-4、于.sh中添加代码，见底部。（如脚本失败，则可于终端中cd至当前文件所在目录，sudo chmod 777 xxx.sh，进行权限修改）
-5、于.list中添加需要混淆的方法名、属性名。
-6、于项目.pch中添加.h。
-7、build，如果成功后于.h中可见如"#define testMethod TivUUkoVpUUmKCCx"，前方为需要混淆的方法，后方为混淆后的方法。
-8、如混淆成功，则可于混淆方法中，jump至.h中。
+#  confush.sh
+#  YXCodeConfusionTest
+#
+#  Created by ios on 2020/9/8.
+#  Copyright © 2020 August. All rights reserved.
 
-.sh脚本代码
 TABLENAME=symbols
 SYMBOL_DB_FILE="$PROJECT_DIR/YXCodeConfusionTest/CodeObfuscation/symbols"
 STRING_SYMBOL_FILE="$PROJECT_DIR/YXCodeConfusionTest/CodeObfuscation/func.list"
@@ -53,3 +48,4 @@ done
 echo "#endif" >> $HEAD_FILE
  
 sqlite3 $SYMBOL_DB_FILE .dump
+
