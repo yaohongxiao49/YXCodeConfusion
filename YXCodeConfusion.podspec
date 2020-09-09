@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "YXCodeConfusion"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "代码混淆"
   spec.description  = <<-DESC
                     This is a code obfuscation
@@ -23,9 +23,9 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "10.0"
   spec.source       = { :git => "https://github.com/yaohongxiao49/YXCodeConfusion.git", :tag => "#{spec.version}" }
 
-  spec.source_files  = "YXCodeConfusionTest", "YXCodeConfusionTest/CodeObfuscation/*.{h,list}"
+  spec.source_files  = "YXCodeConfusionTest/CodeObfuscation/*.{h,list}"
   spec.exclude_files = "Classes/Exclude"
-  spec.public_header_files = "CodeObfuscation/*.{h,list}"
+  spec.public_header_files = "YXCodeConfusionTest/CodeObfuscation/*.{h}"
   spec.prefix_header_file = "YXCodeConfusionTest/YXCodeConfusion.pch"
 
 end
