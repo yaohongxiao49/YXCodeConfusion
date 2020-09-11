@@ -110,7 +110,7 @@ end
 4、校验配置：pod lib lint --allow-warnings
 5、创建tag：git tag -a '0.1.0' -m "描述xxx" 版本号要与配置中的一致。
 6、推送tag到远程仓库：git push --tags。
-7、发布自己的库描述文件podspec给cocoapods：pod trunk push xxx.podspec —-allow-warnings。
+7、发布自己的库描述文件podspec给cocoapods：pod trunk push xxx.podspec --allow-warnings。
 8、如果是第一次发布则需要先 pod trunk register 邮箱地址 ‘用户名’ --description=‘描述’，然后进行第7步。
 9、添加人员：pod trunk add-owner 库名 邮箱地址。
 10、移除人员：pod trunk remove-owner 库名 邮箱地址。
